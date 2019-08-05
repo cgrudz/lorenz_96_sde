@@ -78,29 +78,10 @@ def ty_step_path(x, xi, h, args):
     # vector of first order Stratonovich integrals
     J_pdelta = (h / 2) * (np.sqrt(h) * xi + a)
 
-    # define the C auxilliary function
-    def C(l, j):
-        C = np.zeros([p, p])
-        # we will define the coefficient as a sum of matrix entries where r and k do not agree --- we compute this by a
-        # set difference
-        indx = set(range(1, p+1))
-
-        for r in range(1, p+1):
-            # vals are all values not equal to r
-            vals = indx.difference([r])
-            for k in vals:
-                # and for row r, we define all columns to be given by the following, inexing starting at zero
-                C[r-1, k-1] = (r / (r**2 - k**2)) * ((1/k) * zeta[l, r-1] * zeta[j, k-1] + (1/r) * eta[l, r-1] * eta[j, k-1] )
-
-        # we return the sum of all values scaled by -1/2pi^2
-        return .5 * np.pi**(-2) * np.sum(C)
-
-
-
     def Psi(l, j):
         # psi will be a generic function of the indicies l and j, we will define psi plus and psi minus via this
         psi = h**2 * xi[l] * xi[j] / 3 + h**(1.5) * (xi[l] * a[j] + xi[j] * a[l]) / 4 + h * a[l] * a[j] / 2 \
-              - h**(1.5) * (xi[l] * b[j] + xi[j] * b[l]) / (2 * np.pi)  - h**2 * (C(l,j) + C(j,l))
+              - h**(1.5) * (xi[l] * b[j] + xi[j] * b[l]) / (2 * np.pi) 
         return psi
 
     # we define the approximations of the second order Stratonovich integral
