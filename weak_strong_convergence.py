@@ -262,7 +262,9 @@ def experiment(args):
 
 ########################################################################################################################
 
-#
+# Code below used for a single run, for debugging purposes
+
+
 #f = open('../data/obs_trajs/tay_obs_seed_000_sys_dim_10_analint_0.1_diffusion_0.5.txt', 'rb')
 #tmp = pickle.load(f)
 #f.close()

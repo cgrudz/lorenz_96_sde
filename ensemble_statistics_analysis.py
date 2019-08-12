@@ -256,6 +256,8 @@ def exp(args):
 ########################################################################################################################
 
 
+# Code below used for a single run, for debugging purposes
+
 #f = open('../data/obs_trajs/fine_coarse_obs/h_001/tay_obs_seed_000_sys_dim_10_analint_0.1_diffusion_0.1_h_0.001.txt', 'rb')
 #tmp = pickle.load(f)
 #f.close()
