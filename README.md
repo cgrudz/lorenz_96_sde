@@ -10,5 +10,5 @@ framework for naive parallelism across parameter regimes, see e.g., https://ipyp
 
 ## License
 
-This project is licensed under the MIT License - see the [License.md](https://github.com/cgrudz/lorenz_96_sde/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [License.md](https://github.com/cgrudz/lorenz_96_sde/blob/master/LICENSE.md) file for details
 
