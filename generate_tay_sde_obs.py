@@ -25,7 +25,7 @@ def experiment(args):
     p = 1
 
     # time step
-    h = .0005
+    h = .001
 
     # number of observations
     nanl = 100100

@@ -145,7 +145,7 @@ def exp(args):
 
     For a given initial condition, we generate N_ens different realizations of the Brownian motion process over an
     interval of [0,20] and compute the associated discretized trajectories with respect to the Euler-Maruyama,
-    Runge-Kutta, Taylor and adhoc integration methods.  The ensemble mean and spread of each ensemble (with respect
+    Runge-Kutta, Taylor and ad hoc integration methods.  The ensemble mean and spread of each ensemble (with respect
     to each different integration scheme) is saved as output."""
 
     ####################################################################################################################

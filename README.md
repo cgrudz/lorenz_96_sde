@@ -8,7 +8,8 @@ For description of each experiment, see the comments under the exp function defi
 
 ## Getting Started
 
-The following scripts are responsible for generating the experimental data.  Running
+The following scripts are responsible for generating the experimental data. The initial conditions and truth-twin in DA experiments are run offline with the generate_tay_sde_obs.py, and appropriate
+data should be generated this way before running other scripts which depend on this data. 
 
 1. The l96.py script has the general formulation of the strong order 2.0 Talyor integration scheme, for arbitrary order p of truncation of the Fourier series. This also contains other general
 utility functions for the L96 model.  The function l96_2tay_sde here is the general model integration code for practical uses, and differs in implementation in other scripts due to the 
@@ -30,6 +31,8 @@ varying the numerical method of generating the ensemble-based forecast. See the 
 
 ## Processing and plotting data
 
+The directory "Data" has additional scripts that are used to process data and produce publication figures.  The plotting scripts are not well documented, but use standard
+Matplotlib conventions with figures and axes classes.  If there are questions on using them, they can be directed to the corresponding author.
 
 
 ## License
