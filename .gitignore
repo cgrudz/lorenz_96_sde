@@ -49,5 +49,3 @@ Thumbs.db
 # no output from nohup
 *.out 
 
-# no data output
-data/*
