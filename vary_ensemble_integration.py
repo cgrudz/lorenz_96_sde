@@ -106,9 +106,8 @@ def alpha(p):
 def l96_2tay_sde(x, h, args):
     """One step of integration rule for l96 second order taylor rule
 
-    Note that the discretization error depends loosely on p.  rho and
-    alpha are to be computed by the auxiliary functions, depending only on p, and supplied for all steps.  xi is a 
-    standard normal vector to be used across all methods."""
+    Note that the discretization error depends loosely on p.  rho and alpha are to be computed by the auxiliary functions, 
+    depending only on p, and supplied for all steps.  xi is a standard normal vector to be used across all methods."""
 
     # Infer system dimension
     sys_dim = len(x)
@@ -230,6 +229,13 @@ def enkf_stoch_analysis(ens, obs_perts, obs_cov):
 ##########################################################################################################################
 
 def exp(args):
+
+    """This experiment computes EnKF analysis statistics in a twin experiment where the ensemble integration method varies
+
+    In the below, we will use a single truth-twin to generate an initial condition and observation sequences for different
+    implementations of the stochastic EnKF across different methods of generating the ensemble-based forecast.  We
+    generate the forecast ensembles with respect to the same Brownian motion realizations for each the Euler-Maruyama,
+    Runge-Kutta, Taylor and ad hoc methods.  The filter RMSE and spread of each implementation is saved as output."""
 
     # we unpack parameters used for the integration run
     [tru_seq, tanl, diff, obs_un, obs_h, seed] = args

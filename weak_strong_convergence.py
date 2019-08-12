@@ -134,10 +134,10 @@ def compute_a_b(w, fine_delta, coarse_delta, p):
 ########################################################################################################################
 
 def experiment(args):
-    """This experiment will test strong convergence of the EM and order 2.0 Taylor scheme.
+    """This experiment will test strong convergence of the EM, RK and order 2.0 Taylor scheme.
 
     We will initialize a fine realization of the EM scheme with discretization step of 2.5X10^(-7) as the basis for
-    comparison.  We run the EM and Taylor at coarser discretizations to test at what order they match the above"""
+    comparison.  We run the EM, RK and Taylor at coarser discretizations to test at what order they match the above"""
     ####################################################################################################################
     
     # we load the arguments for the experiment, including intiial condition, diffusion coefficient, forcing f, and 

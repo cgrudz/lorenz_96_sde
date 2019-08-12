@@ -141,11 +141,12 @@ def ty_step_path(x, xi, h, args):
 
 
 def exp(args):
-    """This experiment will generate initial conditions on the random attractor by iid sampling a long trajectory
+    """This experiment will compute the ensemble mean and spread as generated from a single initial condition 
 
-    This is a function of the ensemble number which initializes the random seed, the diffusion, and the truncation p.
-    We generate samples on the attractor after a long spin with the second order taylor method.  These samples are
-    forward states of the trajectory, sampled at even intervals of tanl along the trajectory."""
+    For a given initial condition, we generate N_ens different realizations of the Brownian motion process over an
+    interval of [0,20] and compute the associated discretized trajectories with respect to the Euler-Maruyama,
+    Runge-Kutta, Taylor and adhoc integration methods.  The ensemble mean and spread of each ensemble (with respect
+    to each different integration scheme) is saved as output."""
 
     ####################################################################################################################
     #t_0 = time.time()

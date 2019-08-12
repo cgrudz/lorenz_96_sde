@@ -96,9 +96,11 @@ def alpha(p):
 def l96_2tay_sde(x, h, args):
     """One step of integration rule for l96 second order taylor rule
 
-    Note that the discretization error depends loosely on p.  The upper bound on the error
-    of the approximate stratonovich integrals is order h**2*rho, which depends on the order of truncation p.  rho and
-    alpha are to be computed by the auxiliary functions, depending only on p, and supplied for all steps."""
+    The rho and alpha are to be computed by the auxiliary functions, depending only on p, and supplied for all steps.  
+    This is the general formulation which includes, eg. dependence on the truncation of terms in the auxilliary 
+    function C with respect to the parameter p.  In general, truncation at p=1 is all that is necessary for order
+    2.0 convergence, and in this case C below is identically equal to zero.  This auxilliary function can be removed 
+    (and is removed) in other implementations for simplicity."""
 
     # Infer system dimension
     sys_dim = len(x)
