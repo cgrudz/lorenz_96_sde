@@ -172,9 +172,8 @@ def l96_2tay_sde(x, h, args):
 ########################################################################################################################
 
 def analyze_ensemble(ens, truth):
-    """This will compute the ensemble RMSE as compared with the true twin, and the spread.
+    """This will compute the ensemble RMSE as compared with the true twin, and the spread."""
 
-    Here we will compute the RMSE and the geometric average of the eigenvalues"""
     
     # infer the shapes
     [sys_dim, N_ens] = np.shape(ens)
@@ -190,9 +189,6 @@ def analyze_ensemble(ens, truth):
 
     # and the ensemble covariances
     S = A_t.transpose() @ A_t
-
-    # then the eigenvalues
-    lam = np.linalg.eigvalsh(S)
 
     # we compute the spread as in whitaker & louge 98 by the standard deviation of the mean square deviation of the ensemble
     spread = np.sqrt( ( 1 / (N_ens - 1) ) * np.sum(np.mean( (mean - ens.transpose())**2, axis=1)))
