@@ -166,7 +166,7 @@ def l96_2tay_sde(x, h, args):
                 C[r-1, k-1] = (r / (r**2 - k**2)) * ((1/k) * zeta[l, r-1] * zeta[j, k-1] + (1/r) * eta[l, r-1] * eta[j, k-1] )
 
         # we return the sum of all values scaled by -1/2pi^2
-        return .5 * np.pi**(-2) * np.sum(C)
+        return -.5 * np.pi**(-2) * np.sum(C)
 
     def Psi(l, j):
         # psi will be a generic function of the indicies l and j, we will define psi plus and psi minus via this
